@@ -1,0 +1,9 @@
+.btn-submit {
+    border: none;
+    background-color: rgba(92, 40, 40, 0.884);
+}
+
+.btn-submit:hover {
+    background-color: rgba(0, 0, 0, 0.705);
+    transition: all 0.5s;
+}

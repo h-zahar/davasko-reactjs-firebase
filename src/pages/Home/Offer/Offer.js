@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Button, Card, Col } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import './Offer.css';
 
 const Offer = (props) => {
@@ -15,7 +16,7 @@ const Offer = (props) => {
                         {short_description}
                     </Card.Text>
                     <div className="mt-4 mb-3 d-flex justify-content-center">
-                        <Button className="btn-custom">Book Now</Button>
+                        <Link to={`/place/${name}`} style={{color: 'unset', textDecoration: 'none'}}><Button className="btn-custom">Book Now</Button></Link>
                     </div>
                     </Card.Body>
                 </Card>
