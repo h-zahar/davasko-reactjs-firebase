@@ -1,0 +1,15 @@
+.custom-card {
+    background-color: rgba(255, 255, 255, 0.5);
+    box-shadow: -1px -1px 15px rgba(0, 0, 0, 0.15);
+}
+
+.btn-custom {
+    border: none;
+    background-color: rgb(143, 99, 88);
+}
+
+.btn-custom:hover {
+    background-color: rgba(0, 0, 0, 0.63);
+    color: white;
+    transition: all 0.5s;
+}
