@@ -8,41 +8,47 @@ import PlaceOrder from './pages/PlaceOrder/PlaceOrder';
 import Orders from './pages/Orders/Orders';
 import Manage from './pages/Manage/Manage';
 import Add from './pages/Add/Add';
+import AuthProvider from './contexts/AuthProvider';
+import initializeAuthentication from './firebase/firebase.init';
+
+initializeAuthentication();
 
 function App() {
   return (
     <>
-      <Router>
-        <Header />
-        <Switch>
+      <AuthProvider>
+        <Router>
+          <Header />
+          <Switch>
 
-          <Route exact path="/">
-            <Home />
-          </Route>
+            <Route exact path="/">
+              <Home />
+            </Route>
 
-          <Route path="/place/:id">
-            <PlaceOrder />
-          </Route>
+            <Route path="/place/:id">
+              <PlaceOrder />
+            </Route>
 
-          <Route path="/orders">
-            <Orders />
-          </Route>
+            <Route path="/orders">
+              <Orders />
+            </Route>
 
-          <Route path="/manage">
-            <Manage />
-          </Route>
+            <Route path="/manage">
+              <Manage />
+            </Route>
 
-          <Route path="/add">
-            <Add />
-          </Route>
+            <Route path="/add">
+              <Add />
+            </Route>
 
-          <Route path="/login">
-            <Login />
-          </Route>
+            <Route path="/login">
+              <Login />
+            </Route>
 
-        </Switch>
-        <Footer />
-      </Router>
+          </Switch>
+          <Footer />
+        </Router>
+      </AuthProvider>
     </>
   );
 }

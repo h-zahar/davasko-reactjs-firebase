@@ -1,0 +1,7 @@
+.btn-logout {
+    color: rgb(95, 94, 94);
+}
+
+.btn-logout:hover {
+    text-decoration: underline;
+}

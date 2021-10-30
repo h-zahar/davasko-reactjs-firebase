@@ -1,0 +1,15 @@
+.btn-google {
+    border: none;
+    border-radius: 80px;
+    padding: 11px 15px;
+    background-color: black;
+    color: white;
+}
+
+.btn-google:hover {
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    padding: 10px 15px;
+    background-color: white;
+    color: black;
+    transition: color 0.5s, background-color 0.4s;
+}
