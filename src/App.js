@@ -8,6 +8,7 @@ import PlaceOrder from './pages/PlaceOrder/PlaceOrder';
 import Orders from './pages/Orders/Orders/Orders';
 import Manage from './pages/Manage/Manage/Manage';
 import Add from './pages/Add/Add';
+import NotFound from './pages/NotFound/NotFound';
 import AuthProvider from './contexts/AuthProvider';
 import initializeAuthentication from './firebase/firebase.init';
 
@@ -43,6 +44,10 @@ function App() {
 
             <Route path="/login">
               <Login />
+            </Route>
+
+            <Route>
+              <NotFound path="*" />
             </Route>
 
           </Switch>
