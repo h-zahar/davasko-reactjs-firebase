@@ -6,7 +6,7 @@ const Offerings = () => {
     const [offering, setOffering] = useState([]);
 
     useEffect(() => {
-        fetch('./data-json/offerings.json')
+        fetch('http://localhost:5000/offerings')
         .then(res => res.json())
         .then(data => setOffering(data));
     }, []);
@@ -18,7 +18,7 @@ const Offerings = () => {
                 <Row className="d-flex justify-content-center g-3">
                     {
                     offering.map(offer => {
-                        return <Offer key={offer.img} offer={offer} />
+                        return <Offer key={offer._id} offer={offer} />
                     })
                 }
                 </Row>

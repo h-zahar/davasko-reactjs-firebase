@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import './Offer.css';
 
 const Offer = (props) => {
-    const {name, img_i, short_description} = props.offer;
+    const {_id, name, img_i, short_description} = props.offer;
     return (
         <Col xs={12} sm={6} md={4} lg={3}>
             <div className="d-flex justify-content-center">
@@ -16,7 +16,7 @@ const Offer = (props) => {
                         {short_description}
                     </Card.Text>
                     <div className="mt-4 mb-3 d-flex justify-content-center">
-                        <Link to={`/place/${name}`} style={{color: 'unset', textDecoration: 'none'}}><Button className="btn-custom">Book Now</Button></Link>
+                        <Link to={`/place/${_id}`} style={{color: 'unset', textDecoration: 'none'}}><Button className="btn-custom">Book Now</Button></Link>
                     </div>
                     </Card.Body>
                 </Card>
