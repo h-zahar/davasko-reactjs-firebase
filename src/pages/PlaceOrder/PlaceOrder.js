@@ -1,12 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { useParams } from 'react-router';
+import { useHistory, useParams } from 'react-router';
 import useAuth from '../../hooks/useAuth';
 import './PlaceOrder.css';
 
 const PlaceOrder = () => {
     const {id} = useParams();
+    const history = useHistory();
     const { register, handleSubmit, formState: { errors } } = useForm();
+
+    const redirected_uri = '/orders';
 
     const [orderInPlace, setOrderInPlace] = useState({});
     useEffect(() => {
@@ -24,7 +27,10 @@ const PlaceOrder = () => {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify(data),
-        });
+        })
+        .then(res => res.json())
+        .then(data => { })
+        .finally(() => { history.push(redirected_uri) });
 
     }
     const { user } = useAuth();
