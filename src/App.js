@@ -6,7 +6,7 @@ import Footer from './pages/Shared/Footer/Footer';
 import Login from './pages/Login/Login';
 import PlaceOrder from './pages/PlaceOrder/PlaceOrder';
 import Orders from './pages/Orders/Orders/Orders';
-import Manage from './pages/Manage/Manage';
+import Manage from './pages/Manage/Manage/Manage';
 import Add from './pages/Add/Add';
 import AuthProvider from './contexts/AuthProvider';
 import initializeAuthentication from './firebase/firebase.init';

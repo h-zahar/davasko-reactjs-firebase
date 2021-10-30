@@ -6,17 +6,20 @@ const Order = (props) => {
     const { orders, setOrders } = props;
 
     const handleDelete = (id) => {
-        fetch(`http://localhost:5000/orders/${_id}`, {
-            method: 'DELETE',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-        })
-        .then(res => res.json())
-        .then(data => {
-            const remaining = orders.filter(single => single._id !== id);
-            setOrders(remaining);
-        })
+        if(window.confirm('Are you sure to cancel booking?'))
+        {
+            fetch(`http://localhost:5000/orders/${_id}`, {
+                method: 'DELETE',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+            })
+            .then(res => res.json())
+            .then(data => {
+                const remaining = orders.filter(single => single._id !== id);
+                setOrders(remaining);
+            });
+        }
     };
     return (
         <div>
