@@ -5,7 +5,7 @@ import Header from './pages/Shared/Header/Header';
 import Footer from './pages/Shared/Footer/Footer';
 import Login from './pages/Login/Login';
 import PlaceOrder from './pages/PlaceOrder/PlaceOrder';
-import Orders from './pages/Orders/Orders';
+import Orders from './pages/Orders/Orders/Orders';
 import Manage from './pages/Manage/Manage';
 import Add from './pages/Add/Add';
 import AuthProvider from './contexts/AuthProvider';

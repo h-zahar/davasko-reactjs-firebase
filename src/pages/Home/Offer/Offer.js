@@ -11,8 +11,8 @@ const Offer = (props) => {
                 <Card className="custom-card" style={{ width: '18rem' }}>
                     <Card.Img style={{height: '178px'}} variant="top" src={img_i} />
                     <Card.Body>
-                    <Card.Title className="my-2">{name}</Card.Title>
-                    <Card.Text className="my-3" style={{height: '100px'}}>
+                    <Card.Title className="my-2 text-center" style={{height: '35px'}}>{name}</Card.Title>
+                    <Card.Text className="my-4 text-center" style={{height: '115px'}}>
                         {short_description}
                     </Card.Text>
                     <div className="mt-4 mb-3 d-flex justify-content-center">
