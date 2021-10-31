@@ -11,7 +11,7 @@ const Orders = () => {
     useEffect(() => {
         if(user?.email) {
             console.log(user.email);
-            fetch(`http://localhost:5000/orders`)
+            fetch(`https://morning-ridge-69827.herokuapp.com/orders`)
             .then(res => res.json())
             .then(data => setOrders(data.filter(elem => elem.email === user?.email)));
         }

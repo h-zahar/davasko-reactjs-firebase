@@ -7,7 +7,7 @@ const ManageCard = (props) => {
     // const updatedStatus = { isAproved: isAproved };
 
     // const handleIsAproved = (id, reverseAproved) => {
-    //     fetch(`http://localhost:5000/orders/${id}`, {
+    //     fetch(`https://morning-ridge-69827.herokuapp.com/orders/${id}`, {
     //         method: 'PUT',
     //         headers: {
     //             'Content-Type': 'application/json',
