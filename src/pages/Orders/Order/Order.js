@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
+import './Order.css';
 
 const Order = (props) => {
     const { _id, fullName, email, offerName } = props.order;
@@ -27,7 +28,8 @@ const Order = (props) => {
                 <h3>{offerName}</h3>
                 <p>{fullName}</p>
                 <p>{email}</p>
-                <Button onClick={() => handleDelete(_id)} className="fs-6 px-2 py-0 rounded-circle" variant="danger">x</Button>
+                <p>{}</p>
+                <Button onClick={() => handleDelete(_id)} className="btn-cross fs-6 px-2 py-0 rounded-circle" variant="danger">x</Button>
             </div>
         </div>
     )

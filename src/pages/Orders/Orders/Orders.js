@@ -13,7 +13,7 @@ const Orders = () => {
             console.log(user.email);
             fetch(`http://localhost:5000/orders`)
             .then(res => res.json())
-            .then(data => setOrders(data.filter(elem => elem.email == user?.email)));
+            .then(data => setOrders(data.filter(elem => elem.email === user?.email)));
         }
     }, [user?.email]);
 

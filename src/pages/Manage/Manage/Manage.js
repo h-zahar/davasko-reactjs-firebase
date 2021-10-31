@@ -9,7 +9,7 @@ const Manage = () => {
         fetch('http://localhost:5000/orders')
         .then(res => res.json())
         .then(data => setAllOrders(data));
-    }, [isLoading]);
+    }, [isLoading, allOrders]);
     return (
         <div>
             <h2 className="my-5 text-center">Manage Orders</h2>
