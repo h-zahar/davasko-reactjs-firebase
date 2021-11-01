@@ -3,7 +3,7 @@ import { Button } from 'react-bootstrap';
 import './Order.css';
 
 const Order = (props) => {
-    const { _id, fullName, email, offerName } = props.order;
+    const { _id, fullName, email, offerName, isAproved } = props.order;
     const { orders, setOrders } = props;
 
     const handleDelete = (id) => {
@@ -28,6 +28,12 @@ const Order = (props) => {
                 <h3>{offerName}</h3>
                 <p>{fullName}</p>
                 <p>{email}</p>
+                {
+                    isAproved ?
+                    <p>Status: <span className="text-success">Approved</span></p> :
+                    <p>Status: <span className="text-danger">Pending</span></p>
+                }
+
                 <Button onClick={() => handleDelete(_id)} className="btn-cross fs-6 px-2 py-0 rounded-circle" variant="danger">x</Button>
             </div>         
         </div>

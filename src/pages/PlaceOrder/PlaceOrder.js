@@ -57,6 +57,8 @@ const PlaceOrder = () => {
                     <input className="my-2" placeholder="Address" {...register("address", { required: true })} />
                     {errors.address && <span className="mb-2 text-danger"> Something's not correct</span>}
 
+                    <p className="mt-3 text-center">Status: <span className="text-danger">Pending</span></p>
+
                     <input className="btn-submit my-2 py-2 text-light" type="submit" value="Place" />
                 </form> }
             </div>

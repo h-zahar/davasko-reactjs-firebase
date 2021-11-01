@@ -1,11 +1,11 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
+import { useHistory } from 'react-router';
 
 const Add = () => {
-    const { register, handleSubmit, formState: { errors } } = useForm();
+    const { register, handleSubmit, reset, formState: { errors } } = useForm();
 
     const onSubmit = data => {
-        console.log(data);
         fetch('http://localhost:5000/offerings', {
             method: 'POST',
             headers: {
@@ -14,7 +14,7 @@ const Add = () => {
             body: JSON.stringify(data),
         })
         .then(res => res.json())
-        .then(data => { });
+        .then(data => { reset() });
     };
 
     return (
@@ -25,7 +25,7 @@ const Add = () => {
                     <input className="my-2" placeholder="Title" {...register("name", { required: true})} />
                     {errors.name && <span className="mb-2 text-danger">Something's not correct</span>}
 
-                    <input className="my-2" placeholder="Short Description" {...register("short_description", { required: true, maxLength: 20 })} />
+                    <textarea className="my-2" placeholder="Short Description (Max 30 Characters)" {...register("short_description", { required: true, maxLength: 30 })} />
                     {errors.short_description && <span className="mb-2 text-danger">Something's not correct</span>}
 
                     <input className="my-2" placeholder="Image URL" {...register("img_i", { required: true })} />

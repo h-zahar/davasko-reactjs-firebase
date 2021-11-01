@@ -26,11 +26,7 @@ const ManageCard = (props) => {
                     return single;
                 }
             });
-            console.log(updated);
             setAllOrders(updated);
-        })
-        .finally(() => {
-
         })
     };
 
