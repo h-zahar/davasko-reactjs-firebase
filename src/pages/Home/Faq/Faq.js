@@ -16,7 +16,7 @@ const About = () => {
 											
                             </Accordion.Header>
                             <Accordion.Body>
-                            To proceed with a booking please click on the red "CLICK HERE TO BOOK NOW" button at the bottom of your quote and submit a booking form. Once we receive this your request will be actioned.
+                            To proceed with a booking please click on the "Book Now" button at the bottom of your quote and submit a booking form. Once we receive this your request will be actioned.
                             </Accordion.Body>
                         </Accordion.Item>
                         <Accordion.Item eventKey="1">
