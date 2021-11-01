@@ -14,7 +14,7 @@ const PlaceOrder = () => {
 
     const [orderInPlace, setOrderInPlace] = useState({});
     useEffect(() => {
-        fetch(`https://morning-ridge-69827.herokuapp.com/${id}`)
+        fetch(`https://morning-ridge-69827.herokuapp.com/offerings/${id}`)
         .then(res => res.json())
         .then(data => setOrderInPlace(data));
     }, []);

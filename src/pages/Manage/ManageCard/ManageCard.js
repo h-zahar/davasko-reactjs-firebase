@@ -33,7 +33,7 @@ const ManageCard = (props) => {
 
     const handleDelete = (id) => {
         if (window.confirm('Do you really wanna cancel?')) {
-            fetch(`https://morning-ridge-69827.herokuapp.com/${_id}`, {
+            fetch(`https://morning-ridge-69827.herokuapp.com/orders/${_id}`, {
                 method: 'DELETE',
                 'Content-Type': 'application/json'
             })
