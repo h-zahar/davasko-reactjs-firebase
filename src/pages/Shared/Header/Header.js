@@ -5,7 +5,7 @@ import useAuth from '../../../hooks/useAuth';
 import './Header.css'
 
 const Header = () => {
-    const { user, logOut } = useAuth();
+    const { user, logOut, isLoading } = useAuth();
     
     return (
         <div style={{position: 'sticky', top: '0', backgroundColor: 'rgba(255, 255, 255, 0.6)', zIndex: '2'}} >
@@ -32,10 +32,15 @@ const Header = () => {
                             }
                         
                             {
-                                user?.email ?
-                                <button style={{backgroundColor: 'unset', border: 'none'}} onClick={logOut} className="btn-logout">Logout</button> :
+                                (!isLoading && user?.email) &&
+                                <button className="rounded" style={{backgroundColor: 'rgba(255, 255, 255, 0.5)', border: '1px solid rgba(0, 0, 0, 0.33)', marginLeft: '1rem', marginRight: '1rem'}} onClick={logOut} className="btn-logout">Logout</button>
+                            }
+
+                            {
+                                (!isLoading && !user?.email) &&
                                 <Nav.Link as={NavLink} exact to="/login">Login</Nav.Link>
                             }
+
                         </Nav>
                     </Navbar.Collapse>
                 </Container>

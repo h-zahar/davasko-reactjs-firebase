@@ -2,13 +2,13 @@ import React, { useEffect, useState } from 'react';
 import { Container, Row } from 'react-bootstrap';
 import Offer from '../Offer/Offer';
 
-const Offerings = () => {
+const Offerings = (props) => {
     const [offering, setOffering] = useState([]);
 
     useEffect(() => {
         fetch('http://localhost:5000/offerings')
         .then(res => res.json())
-        .then(data => setOffering(data));
+        .then(data => setOffering(data))
     }, []);
 
     return (

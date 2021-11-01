@@ -15,6 +15,7 @@ const Login = () => {
             setUser(result.user);
             history.push(redirected_uri);
         })
+        .catch(() => { })
         .finally(() => setIsLoading(false));
     };
 
