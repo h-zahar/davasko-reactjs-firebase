@@ -12,5 +12,5 @@ Live API: <a href="https://morning-ridge-69827.herokuapp.com/">Click Here</a><br
 * There's used firebase authentication
 * Users can login for services
 * Connected with MongoDB database by Express js server
-* Private route has been aplied
+* Private route has been applied
 * Admin panel is available
