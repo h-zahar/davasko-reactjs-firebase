@@ -13,7 +13,7 @@ const Manage = () => {
     return (
         <div>
             <h2 className="my-5 text-center">Manage Orders</h2>
-            <div>
+            <div className="d-flex flex-wrap justify-content-center mb-5">
                 {
                     allOrders.map(all => {
                         return <ManageCard key={all?._id} all={all} allOrders={allOrders} setAllOrders={setAllOrders} />

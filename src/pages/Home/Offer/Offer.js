@@ -9,7 +9,7 @@ const Offer = (props) => {
         <Col xs={12} sm={6} md={4} lg={3}>
             <div className="d-flex justify-content-center">
                 <Card className="custom-card" style={{ width: '18rem' }}>
-                    <Card.Img style={{height: '178px'}} variant="top" src={img_i} />
+                    <Card.Img style={{height: '178px'}} variant="top" src={img_i} alt="Offering" />
                     <Card.Body>
                     <Card.Title className="my-2 text-center" style={{height: '35px'}}>{name}</Card.Title>
                     <Card.Text className="my-4 text-center" style={{height: '115px'}}>

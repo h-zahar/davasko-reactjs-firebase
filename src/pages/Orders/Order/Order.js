@@ -23,12 +23,11 @@ const Order = (props) => {
         }
     };
     return (
-        <div style={{width: '250px', backgroundColor: 'rgba(0, 0, 0, 0.2)'}} className="rounded mx-3 my-4 d-flex justify-content-center">
+        <div style={{minWidth: '250px', backgroundColor: 'rgba(0, 0, 0, 0.1)', boxShadow: '1px 1px 8px rgba(0, 0, 0, 0.7)'}} className="rounded mx-3 my-4 d-flex justify-content-center">
             <div className="text-center p-4">
                 <h3>{offerName}</h3>
                 <p>{fullName}</p>
                 <p>{email}</p>
-                <p>{}</p>
                 <Button onClick={() => handleDelete(_id)} className="btn-cross fs-6 px-2 py-0 rounded-circle" variant="danger">x</Button>
             </div>         
         </div>

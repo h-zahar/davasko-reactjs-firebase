@@ -2,19 +2,37 @@ import React, { useEffect } from 'react';
 import { Button } from 'react-bootstrap';
 
 const ManageCard = (props) => {
+    const {all} = props;
     const { _id, fullName, email, offerName, phoneNumber, address } = props.all;
     const {allOrders, setAllOrders} = props;
 
-    // const handleIsAproved = (id) => {
-    //     fetch(`http:localhost:5000/orders/${id}`, {
-    //         method: 'PUT',
-    //         headers: {
-    //             'Content-Type': 'application/json',
-    //         },
-    //         body: JSON.stringify(props.all)
-    //     })
-    //     .then(data => console.log(data));
-    // };
+    const handleIsAproved = (id) => {
+        fetch('http://localhost:5000/orders', {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(all)
+        })
+        .then(res => res.json())
+        .then(data => {
+            all.isAproved = data.isAproved;
+            const updated = allOrders.map(single => {
+                if (single._id === id) {
+                    single.isAproved = all.isAproved;
+                    return single;
+                }
+                else {
+                    return single;
+                }
+            });
+            console.log(updated);
+            setAllOrders(updated);
+        })
+        .finally(() => {
+
+        })
+    };
 
     const handleDelete = (id) => {
         if (window.confirm('Do you really wanna cancel?')) {
@@ -33,22 +51,25 @@ const ManageCard = (props) => {
     }
 
     return (
-        <div>
-            <div className="d-flex">
-                <p>{_id}</p>
-                <p>{fullName}</p>
-                <p>{email}</p>
-                <p>{phoneNumber}</p>
-                <p>{address}</p>
-                {/* {
-                    isAproved ?
-                    <p>Approved</p> :
-                    <p>Pending</p>
-                } */}
-                <p>{offerName}</p>
-                <Button variant="danger" onClick={() => handleDelete(_id)}>Cancel</Button>
-            </div>
+        <div style={{minWidth: '280px', backgroundColor: 'rgba(0, 0, 0, 0.1)', boxShadow: '1px 1px 8px rgba(0, 0, 0, 0.7)'}} className="rounded mx-3 my-4 d-flex justify-content-center text-center">
+        <div className="p-4">
+        <p><strong>{_id}</strong></p>
+        <p>{fullName}</p>
+        <p><strong>{email}</strong></p>
+        <p>{phoneNumber}</p>
+        <p>{address}</p>
+        <p><strong>{offerName}</strong></p>
+        <div className="my-4">
+        {
+            all.isAproved ?
+            <Button variant="success" onClick={() => handleIsAproved(_id)}>Approved</Button> :
+            <Button variant="danger" bg="light" onClick={() => handleIsAproved(_id)}>Pending</Button>
+        }
         </div>
+        <Button variant="danger" onClick={() => handleDelete(_id)}>Cancel</Button>
+    
+        </div>
+    </div>
     )
 }
 
