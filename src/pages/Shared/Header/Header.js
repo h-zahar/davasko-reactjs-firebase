@@ -30,6 +30,13 @@ const Header = () => {
                                 user?.email &&
                                 <Nav.Link as={NavLink} exact to="/add">Add</Nav.Link>
                             }
+
+                            {
+                                user?.email &&
+                                <div>
+                                    <p className="mx-0 my-2 px-2"><span>{user?.displayName}</span></p>
+                                </div>
+                            }
                         
                             {
                                 (!isLoading && user?.email) &&
