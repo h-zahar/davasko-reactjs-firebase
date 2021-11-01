@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { Button } from 'react-bootstrap';
+import './ManageCard.css';
 
 const ManageCard = (props) => {
     const {all} = props;
@@ -58,8 +59,8 @@ const ManageCard = (props) => {
         <div className="my-4">
         {
             all.isAproved ?
-            <Button variant="success" onClick={() => handleIsAproved(_id)}>Approved</Button> :
-            <Button variant="danger" bg="light" onClick={() => handleIsAproved(_id)}>Pending</Button>
+            <Button className="btn-aproved" onClick={() => handleIsAproved(_id)}><span>Approved</span></Button> :
+            <Button className="btn-pending" onClick={() => handleIsAproved(_id)}><span>Pending</span></Button>
         }
         </div>
         <Button variant="danger" onClick={() => handleDelete(_id)}>Cancel</Button>

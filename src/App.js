@@ -9,6 +9,7 @@ import Orders from './pages/Orders/Orders/Orders';
 import Manage from './pages/Manage/Manage/Manage';
 import Add from './pages/Add/Add';
 import NotFound from './pages/NotFound/NotFound';
+import PrivateRoute from './pages/PrivateRoute/PrivateRoute';
 import AuthProvider from './contexts/AuthProvider';
 import initializeAuthentication from './firebase/firebase.init';
 
@@ -26,21 +27,21 @@ function App() {
               <Home />
             </Route>
 
-            <Route path="/place/:id">
+            <PrivateRoute path="/place/:id">
               <PlaceOrder />
-            </Route>
+            </PrivateRoute>
 
-            <Route path="/orders">
+            <PrivateRoute path="/orders">
               <Orders />
-            </Route>
-
-            <Route path="/manage">
+            </PrivateRoute>
+            
+            <PrivateRoute path="/manage">
               <Manage />
-            </Route>
+            </PrivateRoute>
 
-            <Route path="/add">
+            <PrivateRoute path="/add">
               <Add />
-            </Route>
+            </PrivateRoute>
 
             <Route path="/login">
               <Login />
