@@ -14,7 +14,7 @@ const PlaceOrder = () => {
 
     const [orderInPlace, setOrderInPlace] = useState({});
     useEffect(() => {
-        fetch(`http://localhost:5000/offerings/${id}`)
+        fetch(`https://morning-ridge-69827.herokuapp.com/${id}`)
         .then(res => res.json())
         .then(data => setOrderInPlace(data));
     }, []);
@@ -23,7 +23,7 @@ const PlaceOrder = () => {
         console.log(data);
         data.isAproved = false;
         
-        fetch('http://localhost:5000/orders', {
+        fetch('https://morning-ridge-69827.herokuapp.com/orders', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

@@ -6,7 +6,7 @@ const Offerings = () => {
     const [offering, setOffering] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/offerings')
+        fetch('https://morning-ridge-69827.herokuapp.com/offerings')
         .then(res => res.json())
         .then(data => setOffering(data))
     }, []);

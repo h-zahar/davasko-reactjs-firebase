@@ -8,7 +8,7 @@ const ManageCard = (props) => {
     const {allOrders, setAllOrders} = props;
 
     const handleIsAproved = (id) => {
-        fetch('http://localhost:5000/orders', {
+        fetch('https://morning-ridge-69827.herokuapp.com/orders', {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'
@@ -33,7 +33,7 @@ const ManageCard = (props) => {
 
     const handleDelete = (id) => {
         if (window.confirm('Do you really wanna cancel?')) {
-            fetch(`http://localhost:5000/orders/${_id}`, {
+            fetch(`https://morning-ridge-69827.herokuapp.com/${_id}`, {
                 method: 'DELETE',
                 'Content-Type': 'application/json'
             })

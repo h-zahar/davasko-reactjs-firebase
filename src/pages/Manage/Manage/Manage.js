@@ -5,7 +5,7 @@ import ManageCard from '../ManageCard/ManageCard';
 const Manage = () => {
     const [allOrders, setAllOrders] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/orders')
+        fetch('https://morning-ridge-69827.herokuapp.com/orders')
         .then(res => res.json())
         .then(data => setAllOrders(data));
     }, []);
