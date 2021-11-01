@@ -42,7 +42,7 @@ const About = () => {
 											
                             </Accordion.Header>
                             <Accordion.Body>
-                            You'll find a cross button in 'your orders' section to cancel.
+                            You'll find a cross button in 'Your Orders' section to cancel.
                             </Accordion.Body>
                         </Accordion.Item>
                         </Accordion>
