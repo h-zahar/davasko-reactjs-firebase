@@ -1,4 +1,4 @@
-# davasko-frontent
+# davasko-frontend
 
 Live Website: <a href="https://davaskog.web.app/">Click Here</a><br />
 
