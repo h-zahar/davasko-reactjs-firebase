@@ -16,6 +16,7 @@ import initializeAuthentication from './firebase/firebase.init';
 initializeAuthentication();
 
 function App() {
+
   return (
     <>
       <AuthProvider>
@@ -52,7 +53,7 @@ function App() {
             </Route>
 
           </Switch>
-          <Footer />
+            <Footer />
         </Router>
       </AuthProvider>
     </>

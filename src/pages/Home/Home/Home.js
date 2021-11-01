@@ -1,5 +1,7 @@
 import { Spinner } from 'react-bootstrap';
 import useAuth from '../../../hooks/useAuth';
+import About from '../About/About';
+import Faq from '../Faq/Faq';
 import Banner from '../Banner/Banner';
 import Offerings from '../Offerings/Offerings';
 import './Home.css';
@@ -15,6 +17,8 @@ const Home = () => {
         <div className="bg-home">
             <Banner />
             <Offerings />
+            <About />
+            <Faq />
         </div>
     )
 }

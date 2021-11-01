@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Container, Row } from 'react-bootstrap';
 import Offer from '../Offer/Offer';
 
-const Offerings = (props) => {
+const Offerings = () => {
     const [offering, setOffering] = useState([]);
 
     useEffect(() => {

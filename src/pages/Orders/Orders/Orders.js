@@ -5,7 +5,7 @@ import useAuth from '../../../hooks/useAuth';
 import Order from '../Order/Order';
 
 const Orders = () => {
-    const { user, isLoading } = useAuth();
+    const { user } = useAuth();
 
     const [orders, setOrders] = useState([]);
     
@@ -19,7 +19,7 @@ const Orders = () => {
     }, [user?.email]);
 
     return (
-        <div>
+        <div style={{minHeight: '70vh'}}>
             <h2 className="my-5 text-center">Your Orders</h2>
             <Container>
                 <div className="d-flex flex-wrap justify-content-center">

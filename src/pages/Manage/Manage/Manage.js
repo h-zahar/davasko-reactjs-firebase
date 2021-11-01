@@ -3,7 +3,6 @@ import useAuth from '../../../hooks/useAuth';
 import ManageCard from '../ManageCard/ManageCard';
 
 const Manage = () => {
-    const {isLoading} = useAuth();
     const [allOrders, setAllOrders] = useState([]);
     useEffect(() => {
         fetch('http://localhost:5000/orders')
@@ -11,7 +10,7 @@ const Manage = () => {
         .then(data => setAllOrders(data));
     }, []);
     return (
-        <div>
+        <div style={{minHeight: '70vh'}}>
             <h2 className="my-5 text-center">Manage Orders</h2>
             <div className="d-flex flex-wrap justify-content-center mb-5">
                 {
