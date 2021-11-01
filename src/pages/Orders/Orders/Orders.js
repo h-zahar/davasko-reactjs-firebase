@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Container } from 'react-bootstrap';
 import { useHistory } from 'react-router';
 import useAuth from '../../../hooks/useAuth';
 import Order from '../Order/Order';
@@ -11,7 +12,7 @@ const Orders = () => {
     useEffect(() => {
         if(user?.email) {
             console.log(user.email);
-            fetch(`https://morning-ridge-69827.herokuapp.com/orders`)
+            fetch(`http://localhost:5000/orders`)
             .then(res => res.json())
             .then(data => setOrders(data.filter(elem => elem.email === user?.email)));
         }
@@ -20,13 +21,15 @@ const Orders = () => {
     return (
         <div>
             <h2 className="my-5 text-center">Your Orders</h2>
-            <div>
-                {
-                    orders.map(order => {
-                        return <Order key={order?._id} order={order} orders={orders} setOrders={setOrders} />
-                    })
-                }
-            </div>
+            <Container>
+                <div className="d-flex flex-wrap justify-content-center">
+                    {
+                        orders.map(order => {
+                            return <Order key={order?._id} order={order} orders={orders} setOrders={setOrders} />
+                        })
+                    }
+                </div>
+            </Container>
         </div>
     )
 }

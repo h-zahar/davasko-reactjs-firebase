@@ -9,7 +9,7 @@ const Order = (props) => {
     const handleDelete = (id) => {
         if(window.confirm('Are you sure to cancel booking?'))
         {
-            fetch(`https://morning-ridge-69827.herokuapp.com/orders/${_id}`, {
+            fetch(`http://localhost:5000/orders/${_id}`, {
                 method: 'DELETE',
                 headers: {
                     'Content-Type': 'application/json'
@@ -23,14 +23,14 @@ const Order = (props) => {
         }
     };
     return (
-        <div>
-            <div>
+        <div style={{width: '250px', backgroundColor: 'rgba(0, 0, 0, 0.2)'}} className="rounded mx-3 my-4 d-flex justify-content-center">
+            <div className="text-center p-4">
                 <h3>{offerName}</h3>
                 <p>{fullName}</p>
                 <p>{email}</p>
                 <p>{}</p>
                 <Button onClick={() => handleDelete(_id)} className="btn-cross fs-6 px-2 py-0 rounded-circle" variant="danger">x</Button>
-            </div>
+            </div>         
         </div>
     )
 }

@@ -1,13 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Button } from 'react-bootstrap';
 
 const ManageCard = (props) => {
-    const { _id, fullName, email, offerName, phoneNumber, address, isAproved } = props.all;
+    const { _id, fullName, email, offerName, phoneNumber, address } = props.all;
+    const {allOrders, setAllOrders} = props;
 
-    // const updatedStatus = { isAproved: isAproved };
-
-    // const handleIsAproved = (id, reverseAproved) => {
-    //     fetch(`https://morning-ridge-69827.herokuapp.com/orders/${id}`, {
+    // const handleIsAproved = (id) => {
+    //     fetch(`http:localhost:5000/orders/${id}`, {
     //         method: 'PUT',
     //         headers: {
     //             'Content-Type': 'application/json',
@@ -16,6 +15,22 @@ const ManageCard = (props) => {
     //     })
     //     .then(data => console.log(data));
     // };
+
+    const handleDelete = (id) => {
+        if (window.confirm('Do you really wanna cancel?')) {
+            fetch(`http://localhost:5000/orders/${_id}`, {
+                method: 'DELETE',
+                'Content-Type': 'application/json'
+            })
+            .then(res => res.json)
+            .then(data => {
+                if(data) {
+                    const remaining = allOrders.filter(single => single._id !== id);
+                    setAllOrders(remaining);
+                }
+            });
+        }
+    }
 
     return (
         <div>
@@ -27,10 +42,11 @@ const ManageCard = (props) => {
                 <p>{address}</p>
                 {/* {
                     isAproved ?
-                    <Button variant="success">Approved</Button> :
-                    <Button onClick={() => handleIsAproved(_id, !isAproved)} variant="danger">Pending</Button>
+                    <p>Approved</p> :
+                    <p>Pending</p>
                 } */}
                 <p>{offerName}</p>
+                <Button variant="danger" onClick={() => handleDelete(_id)}>Cancel</Button>
             </div>
         </div>
     )
