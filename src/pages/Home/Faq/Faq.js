@@ -12,7 +12,7 @@ const About = () => {
                         <Accordion.Item eventKey="0">
                             <Accordion.Header>
                             
-							<span class="fw-bold">How do I book?</span>
+							<span className="fw-bold">How do I book?</span>
 											
                             </Accordion.Header>
                             <Accordion.Body>
@@ -20,7 +20,7 @@ const About = () => {
                             </Accordion.Body>
                         </Accordion.Item>
                         <Accordion.Item eventKey="1">
-                            <Accordion.Header><span class="fw-bold">Is it available?</span></Accordion.Header>
+                            <Accordion.Header><span className="fw-bold">Is it available?</span></Accordion.Header>
                             <Accordion.Body>
                             Due to differing Hotel systems, live availability cannot always be checked at the time of quoting and the time lapse between your quote and booking request can mean a room may be sold. Your booking requests are automatically sent (24 hours a day) to the Hotel or Supplier for confirmation. Final Confirmations on booking requests are generally within 24 hours (up to 48 hours over weekends) Until you have received a confirmation of your booking, it is on a request basis and your payment will not be processed until final confirmations are received.
                             </Accordion.Body>
@@ -28,7 +28,7 @@ const About = () => {
                         <Accordion.Item eventKey="2">
                             <Accordion.Header>
                             
-							<span class="fw-bold">When will my credit card be charged?</span>
+							<span className="fw-bold">When will my credit card be charged?</span>
 											
                             </Accordion.Header>
                             <Accordion.Body>
@@ -38,7 +38,7 @@ const About = () => {
                         <Accordion.Item eventKey="3">
                             <Accordion.Header>
                             
-							<span class="fw-bold">What if I need to cancel or amend my booking?</span>
+							<span className="fw-bold">What if I need to cancel or amend my booking?</span>
 											
                             </Accordion.Header>
                             <Accordion.Body>

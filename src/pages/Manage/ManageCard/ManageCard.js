@@ -1,4 +1,3 @@
-import React, { useEffect } from 'react';
 import { Button } from 'react-bootstrap';
 import './ManageCard.css';
 

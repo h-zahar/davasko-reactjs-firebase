@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { Container } from 'react-bootstrap';
-import { useHistory } from 'react-router';
 import useAuth from '../../../hooks/useAuth';
 import Order from '../Order/Order';
 
@@ -12,7 +11,7 @@ const Orders = () => {
     useEffect(() => {
         if(user?.email) {
             console.log(user.email);
-            fetch(`https://morning-ridge-69827.herokuapp.com/orders`)
+            fetch('https://morning-ridge-69827.herokuapp.com/orders')
             .then(res => res.json())
             .then(data => setOrders(data.filter(elem => elem.email === user?.email)));
         }

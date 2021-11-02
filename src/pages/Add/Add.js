@@ -18,7 +18,7 @@ const Add = () => {
 
     return (
         <div>
-            <div class="my-5 d-flex justify-content-center">
+            <div className="my-5 d-flex justify-content-center">
             <form style={{maxWidth: '450px', minWidth: '280px'}} className="d-flex flex-column p-5 shadow-lg rounded" onSubmit={handleSubmit(onSubmit)}>
                     <h4 className="text-center mb-3">Entry</h4>
                     <input className="my-2" placeholder="Title" {...register("name", { required: true})} />

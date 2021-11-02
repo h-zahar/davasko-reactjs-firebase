@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import useAuth from '../../../hooks/useAuth';
 import ManageCard from '../ManageCard/ManageCard';
 
 const Manage = () => {

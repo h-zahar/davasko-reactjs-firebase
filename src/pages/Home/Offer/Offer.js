@@ -1,4 +1,3 @@
-import React, { useEffect, useState } from 'react';
 import { Button, Card, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import './Offer.css';
