@@ -2,7 +2,8 @@ import React from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
-import './Header.css'
+import './Header.css';
+import logo from '../../../logo.svg';
 
 const Header = () => {
     const { user, logOut, isLoading } = useAuth();
@@ -11,7 +12,15 @@ const Header = () => {
         <div style={{position: 'sticky', top: '0', backgroundColor: 'rgba(255, 255, 255, 0.6)', zIndex: '2'}} >
             <Navbar style={{backgroundColor: 'rgba(94, 73, 53, 0.3)', zIndex: '2'}} className="py-3" collapseOnSelect expand="md">
                 <Container>
-                <Navbar.Brand as={NavLink} exact to="/">Davasko</Navbar.Brand>
+                <Navbar.Brand as={NavLink} exact to="/">
+                    <img
+                        alt=""
+                        src={logo}
+                        width="30"
+                        height="30"
+                        className="d-inline-block align-top rounded-circle"
+                    />{' '}
+                    Davasko</Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="ms-auto">
