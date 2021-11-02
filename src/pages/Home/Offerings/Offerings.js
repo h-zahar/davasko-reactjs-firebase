@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Container, Row } from 'react-bootstrap';
+import { Container, Row, Spinner } from 'react-bootstrap';
 import Offer from '../Offer/Offer';
 
 const Offerings = () => {
@@ -12,7 +12,11 @@ const Offerings = () => {
     }, []);
 
     return (
-        <div className="mt-5 py-5">
+        <div>
+        {
+            !offering?.length ?
+            <div className="d-flex justify-content-center mt-4"><Spinner animation="border" /></div> :
+            <div className="mt-5 py-5">
             <h2 className="text-center mb-5">Our Offerings</h2>
             <Container>
                 <Row className="d-flex justify-content-center g-3">
@@ -23,6 +27,8 @@ const Offerings = () => {
                 }
                 </Row>
             </Container>
+        </div>
+        }
         </div>
     )
 }
