@@ -25,8 +25,11 @@ const Add = () => {
                     <input className="my-2" placeholder="Title" {...register("name", { required: true})} />
                     {errors.name && <span className="mb-2 text-danger">Something's not correct</span>}
 
-                    <textarea className="my-2" placeholder="Short Description (Max 30 Characters)" {...register("short_description", { required: true, maxLength: 30 })} />
+                    <textarea className="my-2" placeholder="Short Description (Max 100 Characters)" {...register("short_description", { required: true, maxLength: 100 })} />
                     {errors.short_description && <span className="mb-2 text-danger">Something's not correct</span>}
+
+                    <textarea className="my-2" placeholder="Long Description (Max 1000 Characters)" {...register("long_description", { required: true, maxLength: 1000 })} />
+                    {errors.long_description && <span className="mb-2 text-danger">Something's not correct</span>}
 
                     <input className="my-2" placeholder="Image URL" {...register("img_i", { required: true })} />
                     {errors.img_i && <span className="mb-2 text-danger">Something's not correct</span>}
