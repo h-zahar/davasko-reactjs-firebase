@@ -20,7 +20,6 @@ const PlaceOrder = () => {
     }, []);
 
     const onSubmit = data => {
-        console.log(data);
         data.isAproved = false;
         
         fetch('https://morning-ridge-69827.herokuapp.com/orders', {
