@@ -5,20 +5,30 @@ import Faq from '../Faq/Faq';
 import Banner from '../Banner/Banner';
 import Offerings from '../Offerings/Offerings';
 import './Home.css';
+import { useState } from 'react';
 
 const Home = () => {
-    const {isLoading} = useAuth();
-    if (isLoading)
-    {
-        return <div className="d-flex justify-content-center mt-4"><Spinner animation="border" /></div>
-    }
+    const [isLoadState, setIsLoadState] = useState(true);
 
     return (
         <div className="bg-home">
-            <Banner />
-            <Offerings />
-            <About />
-            <Faq />
+            {
+                !isLoadState &&
+                <Banner />
+            }
+
+            <Offerings setIsLoadState={setIsLoadState} />
+
+            {
+                !isLoadState &&
+                <About />
+            }
+
+            {
+                !isLoadState &&
+                <Faq />
+            }
+
         </div>
     )
 }
