@@ -14,7 +14,7 @@ const PlaceOrder = () => {
 
     const [orderInPlace, setOrderInPlace] = useState({});
     useEffect(() => {
-        fetch(`https://morning-ridge-69827.herokuapp.com/offerings/${id}`)
+        fetch(`https://api-davasko.onrender.com/offerings/${id}`)
         .then(res => res.json())
         .then(data => setOrderInPlace(data));
     }, []);
@@ -22,7 +22,7 @@ const PlaceOrder = () => {
     const onSubmit = data => {
         data.isAproved = false;
         
-        fetch('https://morning-ridge-69827.herokuapp.com/orders', {
+        fetch('https://api-davasko.onrender.com/orders', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

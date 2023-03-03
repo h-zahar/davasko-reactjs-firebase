@@ -5,7 +5,7 @@ const Add = () => {
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
 
     const onSubmit = data => {
-        fetch('https://morning-ridge-69827.herokuapp.com/offerings', {
+        fetch('https://api-davasko.onrender.com/offerings', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

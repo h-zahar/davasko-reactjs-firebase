@@ -10,7 +10,7 @@ const Orders = () => {
     
     useEffect(() => {
         if(user?.email) {
-            fetch('https://morning-ridge-69827.herokuapp.com/orders')
+            fetch('https://api-davasko.onrender.com/orders')
             .then(res => res.json())
             .then(data => setOrders(data.filter(elem => elem.email === user?.email)));
         }

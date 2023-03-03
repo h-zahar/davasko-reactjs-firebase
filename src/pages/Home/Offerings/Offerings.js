@@ -8,7 +8,7 @@ const Offerings = (props) => {
 
     useEffect(() => {
         setIsLoadState(true);
-        fetch('https://morning-ridge-69827.herokuapp.com/offerings')
+        fetch('https://api-davasko.onrender.com/offerings')
         .then(res => res.json())
         .then(data => setOffering(data))
         .finally(() => {

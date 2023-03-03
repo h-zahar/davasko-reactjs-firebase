@@ -4,7 +4,7 @@ import ManageCard from '../ManageCard/ManageCard';
 const Manage = () => {
     const [allOrders, setAllOrders] = useState([]);
     useEffect(() => {
-        fetch('https://morning-ridge-69827.herokuapp.com/orders')
+        fetch('https://api-davasko.onrender.com/orders')
         .then(res => res.json())
         .then(data => setAllOrders(data));
     }, []);
